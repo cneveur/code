@@ -1,0 +1,8 @@
+<?php
+    $hoy=date("Y-m-d H:i:s"); 
+    $datetime1 = new DateTime($post->fechaacceso);
+    $datetime2 = new DateTime($hoy);
+    $interval = $datetime1->diff($datetime2);
+    $diasresta = $interval->format('%d años, %d meses, %d días, %d horas, %d minutos');
+    echo ($diasresta);*/
+?> 
