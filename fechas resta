@@ -6,3 +6,21 @@
     $diasresta = $interval->format('%d años, %d meses, %d días, %d horas, %d minutos');
     echo ($diasresta);*/
 ?> 
+
+<td>
+<?php if ($diasresta<0):
+        echo "faltan ".abs($diasresta)." d&iacute;as";
+        else:
+        echo "hace ".abs($diasresta)." d&iacute;as";
+endif; ?>
+
+<?php if ($diasresta < '-5'):; ?>
+<span class="label label-success"> </span>
+<?php elseif ($diasresta < '0'):; ?>
+<span class="label label-warning"> </span>
+<?php elseif($diasresta == '0'):; ?>
+<span class="label label-danger"> </span>
+<?php else:;?>
+<span class="label label-danger"> </span>  
+<?php endif;?>
+</td>
