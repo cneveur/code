@@ -1,0 +1,20 @@
+<!-- Flotane para Wordpress -->
+
+<style>
+	#canalytb{
+	position:fixed;
+	top:calc(50% - 55px);
+	right:10px;
+	z-index:9999;
+	display:flex;
+	flex-direction:column;
+	align-items:flex-end;
+}
+
+</style>
+
+<div id="canalytb">
+	<a href="#" class="#" target="_blank">
+		<img src="/wp-content/plugins/btn-acceso/imagen/boton_flotante_4.png">
+	</a>
+</div>
