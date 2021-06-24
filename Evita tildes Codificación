@@ -1,0 +1,3 @@
+<!-- mb_strtoupper — Convierte un string en mayúsculas, salta configuración regional (Ok para tildes,y caracteres raros)-->
+
+<?php if(!empty($alumno->apellidopat)){ echo mb_strtoupper($alumno->apellidopat); }?>
