@@ -1,0 +1,11 @@
+<!--  Todos los navegadores actuales utilizan esta tecnología y prácticamente
+javascript esta hasta en la sopa, entonces podemos apalancarnos de eso para
+olvidarnos de la infinidad de dolores de cabeza y evitar el reenvío de solicitudes
+POST en formularios.  -->
+
+
+<script type="text/javascript">
+  if (window.history.replaceState) { // verificamos disponibilidad
+    window.history.replaceState(null, null, window.location.href);
+}
+</script>
