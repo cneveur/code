@@ -1,0 +1,57 @@
+ <!-- listar nomina de estudiantes y modificar columna Internado. El UPDATE es múltiple de acuerdo al id del estudiante -->
+ 
+ 
+ <?php $ides = XXXXData::getNominaEstudiantes();?> <!-- ->modelo -->
+ 
+ <form role="form" method="post" action="./?action=updateXXXX" enctype="multipart/form-data">
+  <input type="hidden" name="ids" value="<?php foreach ($ides as $ids): echo $ids->id.'-'; endforeach; ?>">
+  <button type="submit" class="btn btn-primary">Guardar</button>
+  
+    <table id="tablaestado" class="display nowrap table-responsive compact"  cellspacing="0" width="100%">
+
+        <thead>
+            <tr>
+                <th width="">Rut</th>
+                <th width="">Internado</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr class="">
+            <td><input type="text" value="<?php echo $value3->rut; ?>" name="rut"></td>
+            <td><input type="text" value="<?php echo $value3->internado; ?>" name="internado<?=$value3->id?>"></td>
+          </tr>
+        </tbody>
+     </table>
+</form>
+ 
+ <!-- action updateXXXX -->
+ 
+ <?php
+    $arreglo = explode("-", $_POST['ids']);
+    $longitud = count($arreglo)-1;
+    
+    foreach($arreglo as $idd):
+    $p = XXXXData::getById($idd);
+		$p->internado = $_POST["internado".''.$idd];
+    
+      if($p->internado != ""):
+          $p->updateXXXX();  <!-- ir a modelo -->
+		  endif;
+ 
+    for($i=0;$i<=$longitud;$i++){
+      if($i==$longitud):
+				Core::redir("./?view=XXXX");
+			endif;	
+		}
+ ?>
+ 
+ <!-- modelo -->
+ 
+ public function updateXXXX(){
+  $sql = "update ".self::$tablename." set internado=\"$this->internado\" where id=$this->id";
+  Executor::doit($sql);
+} 
+
+
+
+ 
