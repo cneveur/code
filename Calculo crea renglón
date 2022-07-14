@@ -1,0 +1,49 @@
+<script type="text/javascript">
+	function creaRenglon() {
+		var cont = $(".material").length;
+		var html = "<tr id = 'material"+(cont+1)+"' class = 'material'>"+
+		"<td><input type = 'text' class = 'cantidad_req' onkeyup='obtTotalMat("+(cont+1)+")'></td>"+
+		"<td><input type = 'text' class = 'valor_unitreq' onkeyup='obtTotalMat("+(cont+1)+")'></td>"+
+		"<td><input type = 'text' class = 'valor_totreq' onchange='calcTotal()'></td>"+
+		"</tr>";
+		$("#tablaReq tbody").append(html);
+	}
+
+	function obtTotalMat(index){
+		var tot = $("#material"+index+" .cantidad_req").val() * $("#material"+index+" .valor_unitreq").val();
+		$("#material"+index+" .valor_totreq").val(tot);
+
+		calcTotal();
+	}
+
+	function calcTotal() {
+		var tot = 0;
+		$(".material .valor_totreq").each(function () {
+			tot+=Number($(this).val());
+		});
+		$("#granTotal").val(tot);
+	}
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<table id ="tablaReq">
+	<thead>
+		<tr>
+			<th>Cantidad</th>
+			<th>Precio unitario</th>
+			<th>Total</th>
+		</tr>
+	</thead>
+	<tbody>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td>&nbsp</td>
+			<td>Gran total:</td>
+			<td>
+				<input id= "granTotal">
+			</td>
+			<tr>
+			</tfoot>
+		</table>
+		<a href="#" onclick ="creaRenglon()">Agregar material</a>
