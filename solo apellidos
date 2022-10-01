@@ -1,0 +1,10 @@
+Consulta Mysql para devolver únicamente el primer apellido
+
+Por ejemplo si el nombre y apellidos disponen de dos espacios en blanco, puedes hacer para sacar el nombre:
+select substring_index("nombre apellido1 apellido2",' ',1);
+
+El primer apellido
+select substring_index(substring_index("nombre apellido1 apellido2"," ",-2), " ", 1);
+
+El segundo apellido
+select substring_index(substring_index("nombre apellido1 apellido2"," ",-1), " ", 1);
