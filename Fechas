@@ -1,0 +1,29 @@
+1. Consulta los datos del día (hoy)
+SELECT * FROM `order` WHERE TO_DAYS(order_time) = TO_DAYS(NOW())
+
+2. Consultar los datos de ayer
+SELECT * FROM `order` WHERE TO_DAYS(NOW()) - TO_DAYS(order_time) = 1
+
+3. Consultar los datos de los últimos 7 días (incluyendo hoy un total de 7 días)
+SELECT * FROM `order` where DATE_SUB(CURDATE(), INTERVAL 7 DAY) < date(order_time)
+
+4. Consultar los datos de los últimos 30 días (incluyendo hoy un total de 30 días)
+SELECT * FROM `order` where DATE_SUB(CURDATE(), INTERVAL 30 DAY) < date(order_time)
+
+5. Consultar los datos del mes actual (este mes)
+SELECT * FROM `order` WHERE DATE_FORMAT(order_time, '%Y%m') = DATE_FORMAT(CURDATE(), '%Y%m')
+
+6. Consultar los datos del mes anterior
+SELECT * FROM `order` WHERE PERIOD_DIFF(DATE_FORMAT(NOW(),'%Y%m'), DATE_FORMAT(order_time,'%Y%m')) =1
+
+7. Consulta los datos de este trimestre.
+SELECT * FROM `order` WHERE QUARTER(order_time)=QUARTER(NOW())
+
+8. Consulta los datos del trimestre anterior.
+SELECT * FROM `order` WHERE QUARTER(order_time)=QUARTER(DATE_SUB(NOW(),INTERVAL 1 QUARTER))
+
+9. Consultar los datos del año actual (este año)
+SELECT * FROM `order` WHERE YEAR(order_time)=YEAR(NOW())
+
+10. Consultar los datos del año pasado
+SELECT * FROM `order` WHERE YEAR(order_time)=YEAR(DATE_SUB(NOW(),INTERVAL 1 YEAR))
