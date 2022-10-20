@@ -1,0 +1,3 @@
+<?php if($post->fechanac == '' OR is_null($post->fechanac)): echo ''; else:?>
+<?php echo date("d-m-Y", strtotime($post->fechanac))?>
+<?php endif;?>
