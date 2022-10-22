@@ -1,0 +1,61 @@
+function nota_religion(op, nota){
+    if(op == 1){
+        switch (nota) {
+            case 'MB':
+                return 4;
+            break;
+            case 'B':
+                return 3;
+            break;
+            case 'S':
+                return 2;
+            break;
+            case 'I':
+                return 1;
+            break;
+        }
+    }else{
+        switch (nota) {
+            case 1:
+                return 'I';
+            break;
+            case 2:
+                return 'S';
+            break;
+            case 3:
+                return 'B';
+            break;
+            case 4:
+                return 'MB';
+            break;
+        }
+    }
+}
+
+function nota_prebasica(op, nota){
+    if(op == 1){
+        switch (nota) {
+            case 'L':
+                return 3;
+            break;
+            case 'ML':
+                return 2;
+            break;
+            case 'PL':
+                return 1;
+            break;
+        }
+    }else{
+        switch (nota) {
+            case 1:
+                return 'PL';
+            break;
+            case 2:
+                return 'ML';
+            break;
+            case 3:
+                return 'L';
+            break;
+        }
+    }
+}
