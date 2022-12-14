@@ -1,0 +1,7 @@
+<!-- Para deshabilitar en envío automático del formulario cuando se pulsa ENTER,
+puedes añadir un button[type="submit"] desabilitado y oculto al principio del
+formulario que capture y detenga el evento. Ahora tendrás que pulsar el botón de envío
+que tengas al efecto o gestionarlo mediante javascript.  -->
+
+
+<button type="submit" disabled class="none" aria-hidden="true"></button>
