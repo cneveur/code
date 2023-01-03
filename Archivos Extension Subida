@@ -1,0 +1,22 @@
+<label class="control-label success" for=""> 
+    <?php if($post->archivo !=''):?>
+      <?php foreach ($archivos as $archivo): ?>
+        <?php if ($post->archivo == $archivo->idregistro and $post->id == $archivo->usuario): ?>
+          <a href="<?php echo $archivo->ubicacion;?>" target="_blank" data-toggle="tooltip" data-placement="top" title="<?php echo $archivo->archivo;?>">
+            <?php $extension = pathinfo($archivo->archivo, PATHINFO_EXTENSION);
+              if ($extension == 'png' OR $extension == 'jpg' OR $extension == 'jpeg' OR $extension == 'JPG' OR $extension == 'JPEG' OR $extension == 'PNG' OR $extension == 'HEIC' OR $extension == 'heic'): ?>
+                <img class="" src="storage/img.png" style="width:20px">
+            <?php elseif ($extension == 'doc' OR $extension == 'docx' OR $extension == 'DOC' OR $extension == 'DOCX'): ?>
+                <img class="" src="storage/docx_.png" style="width:20px">
+            <?php elseif ($extension == 'txt' OR $extension == 'TXT'): ?>
+                <img class="" src="storage/txt.png" style="width:20px">
+            <?php elseif ($extension == 'xls' OR $extension == 'xlsx' OR $extension == 'XLS' OR $extension == 'XLSX' OR $extension == 'csv' OR $extension == 'CSV'): ?>
+                <img class="" src="storage/xls.png" style="width:20px">
+            <?php elseif ($extension == 'pdf' OR $extension == 'PDF'): ?>
+                <img class="" src="storage/pdf.png" style="width:20px">  
+            <?php else: ""; endif;?>
+            </a>
+          <?php endif; ?>
+        <?php   endforeach; ?>
+    <?php else: echo ""; endif; ?>
+</label>
