@@ -24,3 +24,14 @@ endif; ?>
 <span class="label label-danger"> </span>  
 <?php endif;?>
 </td>
+
+/////////////////////////////////
+
+Cáclulo 2
+<?php
+    $hoy=date("Y-m-d"); 
+    $FechaHoy = new DateTime(date("Y-m-d"));
+    $FechaInicio = new DateTime($post->fechaingreso);
+    $intvl = $FechaHoy->diff($FechaInicio);
+?>
+<h4 style="color: #112A44"><?php echo $intvl->y. " Año(s) ".$intvl->m." Mes(es) y ".$intvl->d." día(s)"; ?></h4>
