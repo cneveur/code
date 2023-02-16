@@ -1,0 +1,7 @@
+Hay varias opciones:
+
+round($var); redondeo con precisión
+
+floor($var); redondeo para abajo
+
+ceil($var); redondeo para arriba
