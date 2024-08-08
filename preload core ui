@@ -1,0 +1,35 @@
+<!-- instalar en layouts -->
+<!-- Se verá en el centro de cualquier página y desaparecerá una vez que cargue la pagina completa -->
+
+<!-- loading -->
+<style type="text/css">
+  .se-pre-con {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #F0F0F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .se-pre-con .spinner-border {
+    width: 3rem;
+    height: 3rem;
+  }
+</style>
+<!-- loading -->
+<div class="se-pre-con">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<!-- /loading -->
+
+<script type="text/javascript">
+$(window).on('load', function() {
+  $(".se-pre-con").fadeOut("slow");
+});
+</script>
